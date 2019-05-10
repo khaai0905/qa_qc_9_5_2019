@@ -33,7 +33,6 @@ class SortPage
     }
     public static $IdSort='((//th[@class="id t-first"])/a)[1]';
     public static $TypeSort='((//th[@class="type t-last"])/a)[1]';
-    public static $TableIdSort='((//th[@class="tableID t-sort-column-ascending t-first"])/a)[1]';
     public static $NumberOfPersonSort='((//th[@class="numberofperson"])/a)[1]';
     public static $DateSort='((//th[@class="date"])/a)[1]';
     public static $DescriptionSort='((//th[@class="description"])/a)[1]';

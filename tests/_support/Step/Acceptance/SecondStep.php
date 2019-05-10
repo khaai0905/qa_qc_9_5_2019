@@ -23,16 +23,7 @@ class SecondStep extends \AcceptanceTester
         $I->waitForElementVisible(SortPage::$TypeSort,30);
         $I->click(SortPage::$TypeSort);
     }
-    public function TableIdSort()
-    {
-        /**
-         * sort in table column
-         */
-        $I=$this;
-        $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(SortPage::$TableIdSort,30);
-        $I->click(SortPage::$TableIdSort);
-    }
+
     public function NumberOfPersonSort()
     {
         /**

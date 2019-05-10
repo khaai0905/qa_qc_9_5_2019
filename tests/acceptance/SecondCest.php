@@ -55,15 +55,7 @@ class SecondCest
         $I->TypeSort();
 
     }
-    public function TableIdSort(SecondStep $I)
-    {
-        /**
-         * I sort type table TD
-         */
-
-        $I->TableIdSort();
-
-    }
+    
     public function NumberOfPersonSort(SecondStep $I)
     {
         /**
