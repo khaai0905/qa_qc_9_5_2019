@@ -1,41 +1,37 @@
 <?php
 namespace Page\Acceptance;
 
+use AcceptanceTester;
+
 class MainPage
 {
     // include url of current page
     public static $URL = '/QATest/';
 
     /**
-     * Declare UI map for this page here. CSS or XPath allowed.
-     * public static $usernameField = '#username';
-     * public static $formSubmitButton = "#mainForm input[type=submit]";
+     * @param $Param
+     * @return string
      */
-
-    /**
-     * Basic route example for your current URL
-     * You can append any additional parameter to URL
-     * and use it in tests like: Page\Edit::route('/123-post');
-     */
-    public static function route($param)
+    public static function route($Param)
     {
-        return static::$URL.$param;
+        return static::$URL.$Param;
     }
 
-    /**
-     * @var \AcceptanceTester;
-     */
     protected $acceptanceTester;
 
-    public function __construct(\AcceptanceTester $I)
+    /**
+     * MainPage constructor.
+     * @param AcceptanceTester $I
+     */
+    public function __construct(AcceptanceTester $I)
     {
         $this->acceptanceTester = $I;
     }
-    public static $NewReservation='//a[text()=\'New Reservation\']';
-    public static $NextPage='(//a[@title=\'Go to page 2\'])';
+    public static $newReservation='//a[text()=\'New Reservation\']';
+    public static $nextPage='(//a[@title=\'Go to page 2\'])';
     public static $Delete='(//a[text()=\'Delete\'])[2]';
     public static $Edit='((//td[@class="edit"])/a)[1]';
-    public static $ReloadData='/html/body/p[2]/a';
-    public static $AddButton='//input[@class=\'t-beaneditor-submit\']';
-    public static $ClearButton='//a[text()=\'clear\']';
+    public static $reloadData='/html/body/p[2]/a';
+    public static $addButton='//input[@class=\'t-beaneditor-submit\']';
+    public static $clearButton='//a[text()=\'clear\']';
 }

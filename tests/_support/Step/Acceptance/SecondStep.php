@@ -4,74 +4,83 @@ use Page\Acceptance\MainPage;
 use Page\Acceptance\SortPage;
 class SecondStep extends \AcceptanceTester
 {
+
+    /**
+     * @throws \Exception
+     */
     public function IdSort()
     {
-        /** @var sort in id column $I */
-        $I=$this;
+
+        $I= $this;
         $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(SortPage::$IdSort,30);
-        $I->click(SortPage::$IdSort);
+        $I->waitForElementVisible(SortPage::$idSort,30);
+        $I->click(SortPage::$idSort);
 
     }
+
+    /**
+     * @throws \Exception
+     */
     public function TypeSort()
     {
-        /**
-         * sort in type column
-         */
-        $I=$this;
+        $I= $this;
         $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(SortPage::$TypeSort,30);
-        $I->click(SortPage::$TypeSort);
+        $I->waitForElementVisible(SortPage::$typeSort,30);
+        $I->click(SortPage::$typeSort);
     }
 
+    /**
+     * @throws \Exception
+     */
     public function NumberOfPersonSort()
     {
-        /**
-         * sort in number column
-         */
-        $I=$this;
+        $I= $this;
         $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(SortPage::$NumberOfPersonSort,30);
-        $I->click(SortPage::$NumberOfPersonSort);
+        $I->waitForElementVisible(SortPage::$numberOfPersonSort,30);
+        $I->click(SortPage::$numberOfPersonSort);
     }
+
+    /**
+     * @throws \Exception
+     */
     public function DateSort()
     {
-        /**
-         * sort in date column
-         */
         $I=$this;
         $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(SortPage::$DateSort,30);
-        $I->click(SortPage::$DateSort);
+        $I->waitForElementVisible(SortPage::$dateSort,30);
+        $I->click(SortPage::$dateSort);
     }
+
+    /**
+     * @throws \Exception
+     */
     public function DescriptionSort()
     {
-        /**
-         * sort in description column
-         */
         $I=$this;
         $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(SortPage::$DescriptionSort,30);
-        $I->click(SortPage::$DescriptionSort);
+        $I->waitForElementVisible(SortPage::$descriptionSort,30);
+        $I->click(SortPage::$descriptionSort);
     }
+
+    /**
+     * @throws \Exception
+     */
     public function DurationSort()
     {
-        /**
-         * sort in duration column
-         */
         $I=$this;
         $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(SortPage::$DurationSort,30);
-        $I->click(SortPage::$DurationSort);
+        $I->waitForElementVisible(SortPage::$durationSort,30);
+        $I->click(SortPage::$durationSort);
     }
+
+    /**
+     * @throws \Exception
+     */
     public function StartTimeSort()
     {
-        /**
-         * sort in start time column
-         */
         $I=$this;
         $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(SortPage::$StartTimeSort,30);
-        $I->click(SortPage::$StartTimeSort);
+        $I->waitForElementVisible(SortPage::$startTimeSort,30);
+        $I->click(SortPage::$startTimeSort);
     }
 }

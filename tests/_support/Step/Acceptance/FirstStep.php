@@ -1,26 +1,34 @@
 <?php
 namespace Step\Acceptance;
+use Exception;
 use Page\Acceptance\MainPage;
-//use Page\Acceptance\SortPage;
 class FirstStep extends \AcceptanceTester
 {
+    /**
+     * @throws Exception
+     */
     public function CreateNewReservation()
     {
-        /**
-         *  first step to create or edit table
-         */
         $I=$this;
         $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(MainPage::$NewReservation,30);
-        $I->click(MainPage::$NewReservation);
+        $I->waitForElementVisible(MainPage::$newReservation,30);
+        $I->click(MainPage::$newReservation);
     }
+
+    /**
+     * @throws Exception
+     */
     public function ReloadData()
     {
         $I=$this;
         $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(MainPage::$ReloadData);
-        $I->click(MainPage::$ReloadData);
+        $I->waitForElementVisible(MainPage::$reloadData);
+        $I->click(MainPage::$reloadData);
     }
+
+    /**
+     * @throws Exception
+     */
     public function DeleteData()
     {
         $I=$this;
@@ -28,24 +36,26 @@ class FirstStep extends \AcceptanceTester
         $I->waitForElementVisible(MainPage::$Delete);
         $I->click(MainPage::$Delete);
     }
+
+    /**
+     * @throws Exception
+     */
     public function Edit()
     {
-        /**
-         * first step to do edit
-         */
         $I=$this;
         $I->amOnPage(MainPage::$URL);
         $I->waitForElementVisible(MainPage::$Edit,30);
         $I->click(MainPage::$Edit);
     }
+
+    /**
+     * @throws Exception
+     */
     public function NextPage()
     {
-        /**
-         * first step to do edit
-         */
         $I=$this;
         $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(MainPage::$NextPage,30);
-        $I->click(MainPage::$NextPage);
+        $I->waitForElementVisible(MainPage::$nextPage,30);
+        $I->click(MainPage::$nextPage);
     }
 }

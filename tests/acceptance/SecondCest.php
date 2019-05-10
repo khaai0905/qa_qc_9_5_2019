@@ -8,17 +8,19 @@ class SecondCest
 {
     public function _before(AcceptanceTester $I)
     {
+
     }
 
-    // tests
     public function tryToTest(AcceptanceTester $I)
     {
+
     }
     protected $TableID;
     protected $NumberOfPerson;
     protected $Date;
     protected $Description;
     protected $StartTime;
+
     public function __construct()
     {
         $this->TableID='1';
@@ -27,11 +29,15 @@ class SecondCest
         $this->Description='happy';
         $this->StartTime='22';
     }
+
+    /**
+     * Verify edit data
+     * @param FirstStep $I
+     * @param $scenario
+     * @throws Exception
+     */
     public function EditData(FirstStep $I, $scenario)
     {
-        /**
-         * do edit data
-         */
         $I->wantToTest('I want to do create new table successfully');
         $I->Edit();
         $I=new ThirdStep($scenario);
@@ -39,56 +45,74 @@ class SecondCest
         $I->amOnPage(MainPage::$URL);
         $I->wait(5);
     }
+
+    /**
+     * Verify sort id
+     * @param SecondStep $I
+     * @throws Exception
+     */
     public function IdSort(SecondStep $I)
     {
-        /**
-         *  I sort Id column
-         */
         $I->IdSort();
-
     }
+
+    /**
+     * Verify sort type
+     * @param SecondStep $I
+     * @throws Exception
+     */
     public function TypeSort(SecondStep $I)
     {
-        /**
-         * I sort type type
-         */
         $I->TypeSort();
-
     }
-    
+
+    /**
+     * Verify sort number of person
+     * @param SecondStep $I
+     * @throws Exception
+     */
     public function NumberOfPersonSort(SecondStep $I)
     {
-        /**
-         * I sort type number of person
-         */
         $I->NumberOfPersonSort();
     }
+
+    /**
+     * Verify sort date
+     * @param SecondStep $I
+     * @throws Exception
+     */
     public function DateSort(SecondStep $I)
     {
-        /**
-         * I sort type date
-         */
         $I->DateSort();
     }
+
+    /**
+     * Verify sort description
+     * @param SecondStep $I
+     * @throws Exception
+     */
     public function DescriptionSort(SecondStep $I)
     {
-        /**
-         * I sort type description
-         */
         $I->DescriptionSort();
     }
+
+    /**
+     * Verify sort duration
+     * @param SecondStep $I
+     * @throws Exception
+     */
     public function DurationSort(SecondStep $I)
     {
-        /**
-         * I sort type duration
-         */
         $I->DurationSort();
     }
+
+    /**
+     * Verify sort start time
+     * @param SecondStep $I
+     * @throws Exception
+     */
     public function StartTimeSort(SecondStep $I)
     {
-        /**
-         * I sort type start time
-         */
         $I->StartTimeSort();
     }
 
