@@ -14,23 +14,23 @@ class FirstCest
     {
 
     }
-    protected $TableID;
+    protected $tableID;
 
-    protected $NumberOfPerson;
+    protected $numberOfPerson;
 
     protected $Date;
 
     protected $Description;
 
-    protected $StartTime;
+    protected $startTime;
 
     public function __construct()
     {
-        $this->TableID='1';
-        $this->NumberOfPerson='5';
+        $this->tableID='1';
+        $this->numberOfPerson='5';
         $this->Date='9/05/2019';
         $this->Description='test';
-        $this->StartTime='18';
+        $this->startTime='18';
     }
 
     /**
@@ -44,7 +44,7 @@ class FirstCest
         $I->wantToTest('I want to do create new table successfully');
         $I->CreateNewReservation();
         $I=new ThirdStep($scenario);
-        $I->InputForCreate($this->TableID,$this->NumberOfPerson,$this->Date,$this->Description,$this->StartTime);
+        $I->InputForCreate($this->tableID,$this->numberOfPerson,$this->Date,$this->Description,$this->startTime);
         $I->comment('Create Successfully');
         $I->amOnPage(MainPage::$URL);
         $I->pause();
@@ -94,7 +94,7 @@ class FirstCest
         $I->wantToTest('I want to test if i clear input field');
         $I->CreateNewReservation();
         $I=new ThirdStep($scenario);
-        $I->InputForClear($this->TableID,$this->NumberOfPerson,$this->Date,$this->Description,$this->StartTime);
+        $I->InputForClear($this->tableID,$this->numberOfPerson,$this->Date,$this->Description,$this->startTime);
         $I->pause();
     }
 

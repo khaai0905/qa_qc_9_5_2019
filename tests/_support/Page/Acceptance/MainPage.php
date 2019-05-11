@@ -28,7 +28,7 @@ class MainPage
         $this->acceptanceTester = $I;
     }
     public static $newReservation='//a[text()=\'New Reservation\']';
-    public static $nextPage='(//a[@title=\'Go to page 2\'])';
+    public static $goToPage='(//a[@title=\'Go to page 2\'])';
     public static $Delete='(//a[text()=\'Delete\'])[2]';
     public static $Edit='((//td[@class="edit"])/a)[1]';
     public static $reloadData='/html/body/p[2]/a';

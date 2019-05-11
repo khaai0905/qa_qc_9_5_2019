@@ -15,19 +15,19 @@ class SecondCest
     {
 
     }
-    protected $TableID;
-    protected $NumberOfPerson;
+    protected $tableID;
+    protected $numberOfPerson;
     protected $Date;
     protected $Description;
-    protected $StartTime;
+    protected $startTime;
 
     public function __construct()
     {
-        $this->TableID='1';
-        $this->NumberOfPerson='10';
+        $this->tableID='1';
+        $this->numberOfPerson='10';
         $this->Date='10/9/2019';
         $this->Description='happy';
-        $this->StartTime='22';
+        $this->startTime='22';
     }
 
     /**
@@ -41,7 +41,7 @@ class SecondCest
         $I->wantToTest('I want to do create new table successfully');
         $I->Edit();
         $I=new ThirdStep($scenario);
-        $I->InputForCreate($this->TableID,$this->NumberOfPerson,$this->Date,$this->Description,$this->StartTime);
+        $I->InputForCreate($this->tableID,$this->numberOfPerson,$this->Date,$this->Description,$this->startTime);
         $I->amOnPage(MainPage::$URL);
         $I->pause();
     }

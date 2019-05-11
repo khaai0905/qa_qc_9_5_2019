@@ -55,7 +55,7 @@ class FirstStep extends \AcceptanceTester
     {
         $I=$this;
         $I->amOnPage(MainPage::$URL);
-        $I->waitForElementVisible(MainPage::$nextPage,30);
-        $I->click(MainPage::$nextPage);
+        $I->waitForElementVisible(MainPage::$goToPage,30);
+        $I->click(MainPage::$goToPage);
     }
 }

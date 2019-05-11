@@ -21,10 +21,10 @@ class ValuePage
     {
         $this->acceptanceTester = $I;
     }
-    public static $tableID='(//input[@name=\'tableID\'])';
-    public static $numberOfPerson='(//input[@name=\'numberofperson\'])';
-    public static $Date='(//input[@name=\'date\'])';
-    public static $Description='//textarea[@name=\'description\']';
-    public static $startTime='(//input[@name=\'startTime\'])';
+    public static $tableID='//input[@id="tableID"]';
+    public static $numberOfPerson='//input[@id="numberofperson"]';
+    public static $Date='//input[@id="date"]';
+    public static $Description='//textarea[@id="description"]';
+    public static $startTime='//input[@id="startTime"]';
 
 }

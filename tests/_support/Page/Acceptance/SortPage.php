@@ -5,7 +5,6 @@ use AcceptanceTester;
 
 class SortPage
 {
-    // include url of current page
     public static $URL = '';
 
     public static function route($param)
