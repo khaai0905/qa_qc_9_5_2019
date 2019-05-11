@@ -47,7 +47,7 @@ class FirstCest
         $I->InputForCreate($this->TableID,$this->NumberOfPerson,$this->Date,$this->Description,$this->StartTime);
         $I->comment('Create Successfully');
         $I->amOnPage(MainPage::$URL);
-        $I->wait(5);
+        $I->pause();
     }
 
     /**
@@ -58,6 +58,7 @@ class FirstCest
     public function ReloadData(FirstStep $I)
     {
         $I->ReloadData();
+        $I->pause();
     }
 
     /**
@@ -68,7 +69,7 @@ class FirstCest
     public function DeleteData(FirstStep $I)
     {
         $I->DeleteData();
-        $I->wait(5);
+        $I->pause();
     }
 
     /**
@@ -79,7 +80,7 @@ class FirstCest
     public function NextPage(FirstStep $I)
     {
         $I->NextPage();
-        $I->wait(5);
+        $I->pause();
     }
 
     /**
@@ -94,7 +95,7 @@ class FirstCest
         $I->CreateNewReservation();
         $I=new ThirdStep($scenario);
         $I->InputForClear($this->TableID,$this->NumberOfPerson,$this->Date,$this->Description,$this->StartTime);
-        $I->wait(5);
+        $I->pause();
     }
 
 }

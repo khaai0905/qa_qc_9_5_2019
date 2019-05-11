@@ -43,7 +43,7 @@ class SecondCest
         $I=new ThirdStep($scenario);
         $I->InputForCreate($this->TableID,$this->NumberOfPerson,$this->Date,$this->Description,$this->StartTime);
         $I->amOnPage(MainPage::$URL);
-        $I->wait(5);
+        $I->pause();
     }
 
     /**
