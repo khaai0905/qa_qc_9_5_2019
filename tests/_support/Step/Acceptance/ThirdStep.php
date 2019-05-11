@@ -33,6 +33,26 @@ class ThirdStep extends \AcceptanceTester
      * @param $numberOfPerson
      * @param $Date
      * @param $Description
+     * @throws \Exception
+     */
+    public function InputNegative($tableID,$numberOfPerson,$Date,$Description)
+    {
+        $I=$this;
+        $I->waitForElementVisible(ValuePage::$tableID,30);
+        $I->fillField(ValuePage::$tableID,$tableID);
+        $I->waitForElementVisible(ValuePage::$numberOfPerson,30);
+        $I->fillField(ValuePage::$numberOfPerson,$numberOfPerson);
+        $I->waitForElementVisible(ValuePage::$Date,30);
+        $I->fillField(ValuePage::$Date,$Date);
+        $I->waitForElementVisible(ValuePage::$Description,30);
+        $I->fillField(ValuePage::$Description,$Description);
+        $I->click(MainPage::$addButton);
+    }
+    /**
+     * @param $tableID
+     * @param $numberOfPerson
+     * @param $Date
+     * @param $Description
      * @param $startTime
      * @throws \Exception
      */

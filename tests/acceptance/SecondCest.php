@@ -6,15 +6,7 @@ use Step\Acceptance\SecondStep;
 use Step\Acceptance\ThirdStep;
 class SecondCest
 {
-    public function _before(AcceptanceTester $I)
-    {
 
-    }
-
-    public function tryToTest(AcceptanceTester $I)
-    {
-
-    }
     protected $tableID;
     protected $numberOfPerson;
     protected $Date;
@@ -38,7 +30,7 @@ class SecondCest
      */
     public function EditData(FirstStep $I, $scenario)
     {
-        $I->wantToTest('I want to do create new table successfully');
+        $I->wantToTest('I want to do edit table successfully');
         $I->Edit();
         $I=new ThirdStep($scenario);
         $I->InputForCreate($this->tableID,$this->numberOfPerson,$this->Date,$this->Description,$this->startTime);

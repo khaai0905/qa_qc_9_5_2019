@@ -5,23 +5,11 @@ use Step\Acceptance\FirstStep;
 use Step\Acceptance\ThirdStep;
 class FirstCest
 {
-    public function _before(AcceptanceTester $I)
-    {
 
-    }
-
-    public function tryToTest(AcceptanceTester $I)
-    {
-
-    }
     protected $tableID;
-
     protected $numberOfPerson;
-
     protected $Date;
-
     protected $Description;
-
     protected $startTime;
 
     public function __construct()
