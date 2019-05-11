@@ -1,7 +1,7 @@
 <?php
-
 use Step\Acceptance\FirstStep;
 use Step\Acceptance\ThirdStep;
+
 class FourthCest
 {
     protected $tableID;
@@ -11,14 +11,14 @@ class FourthCest
 
     public function __construct()
     {
-        $this->tableID='10';
+        $this->tableID='1';
         $this->numberOfPerson='2';
         $this->Date='10/9/2019';
         $this->Description='happy';
     }
 
     /**
-     * Verify create new table without input Duration field
+     * Verify create new table without input Start time field
      * @param FirstStep $I
      * @param $scenario
      * @throws Exception

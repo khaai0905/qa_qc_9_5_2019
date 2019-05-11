@@ -1,9 +1,9 @@
 <?php
-
 use Page\Acceptance\MainPage;
 use Step\Acceptance\FirstStep;
 use Step\Acceptance\SecondStep;
 use Step\Acceptance\ThirdStep;
+
 class SecondCest
 {
 

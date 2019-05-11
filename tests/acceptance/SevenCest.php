@@ -1,34 +1,36 @@
 <?php
-
+use Page\Acceptance\MainPage;
 use Step\Acceptance\FirstStep;
 use Step\Acceptance\ThirdStep;
-class FifthCest
+
+class SevenCest
 {
     protected $tableID;
+    protected $numberOfPerson;
     protected $Date;
-    protected $Description;
     protected $startTime;
 
     public function __construct()
     {
         $this->tableID='1';
+        $this->numberOfPerson='2';
         $this->Date='10/9/2019';
-        $this->Description='happy';
-        $this->startTime='22';
+        $this->startTime='12';
     }
 
     /**
-     * Verify create new table with not input Number Of Person field
      * @param FirstStep $I
      * @param $scenario
      * @throws Exception
      */
-    public function CreateNewWithoutNumberOfPerson(FirstStep $I, $scenario)
+    public function CreateNewWithoutDescription(FirstStep $I, $scenario)
     {
-        $I->wantToTest('I want to do create table unsuccessfully');
+        $I->wantToTest('I want to do edit table successfully');
         $I->CreateNewReservation();
         $I=new ThirdStep($scenario);
-        $I->InputWithoutNumberOfPerson($this->tableID,$this->Date,$this->Description,$this->startTime);
+        $I->InputWithoutDescription($this->tableID,$this->numberOfPerson,$this->Date,$this->startTime);
+        $I->amOnPage(MainPage::$URL);
         $I->pause();
     }
+
 }
