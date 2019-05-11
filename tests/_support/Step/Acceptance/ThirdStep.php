@@ -35,7 +35,7 @@ class ThirdStep extends \AcceptanceTester
      * @param $Description
      * @throws \Exception
      */
-    public function InputNegative($tableID,$numberOfPerson,$Date,$Description)
+    public function InputWithoutStartTime($tableID,$numberOfPerson,$Date,$Description)
     {
         $I=$this;
         $I->waitForElementVisible(ValuePage::$tableID,30);
@@ -48,6 +48,49 @@ class ThirdStep extends \AcceptanceTester
         $I->fillField(ValuePage::$Description,$Description);
         $I->click(MainPage::$addButton);
     }
+
+    /**
+     * @param $tableID
+     * @param $Date
+     * @param $Description
+     * @param $startTime
+     * @throws \Exception
+     */
+    public function InputWithoutNumberOfPerson($tableID,$Date,$Description,$startTime)
+    {
+        $I=$this;
+        $I->waitForElementVisible(ValuePage::$tableID,30);
+        $I->fillField(ValuePage::$tableID,$tableID);
+        $I->waitForElementVisible(ValuePage::$Date,30);
+        $I->fillField(ValuePage::$Date,$Date);
+        $I->waitForElementVisible(ValuePage::$Description,30);
+        $I->fillField(ValuePage::$Description,$Description);
+        $I->waitForElementVisible(ValuePage::$startTime,30);
+        $I->fillField(ValuePage::$startTime,$startTime);
+        $I->click(MainPage::$addButton);
+    }
+
+    /**
+     * @param $numberOfPerson
+     * @param $Date
+     * @param $Description
+     * @param $startTime
+     * @throws \Exception
+     */
+    public function InputWithoutID($numberOfPerson,$Date,$Description,$startTime)
+    {
+        $I=$this;
+        $I->waitForElementVisible(ValuePage::$numberOfPerson,30);
+        $I->fillField(ValuePage::$numberOfPerson,$numberOfPerson);
+        $I->waitForElementVisible(ValuePage::$Date,30);
+        $I->fillField(ValuePage::$Date,$Date);
+        $I->waitForElementVisible(ValuePage::$Description,30);
+        $I->fillField(ValuePage::$Description,$Description);
+        $I->waitForElementVisible(ValuePage::$startTime,30);
+        $I->fillField(ValuePage::$startTime,$startTime);
+        $I->click(MainPage::$addButton);
+    }
+
     /**
      * @param $tableID
      * @param $numberOfPerson
