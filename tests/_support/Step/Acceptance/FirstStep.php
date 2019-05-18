@@ -2,16 +2,27 @@
 namespace Step\Acceptance;
 use Exception;
 use Page\Acceptance\MainPage;
+use Page\Acceptance\ValuePage;
+
 class FirstStep extends \AcceptanceTester
 {
     /**
+     * @param array $reservation
      * @throws Exception
      */
-    public function CreateNewReservation()
+    public function CreateNewReservation($reservation = array())
     {
         $I=$this;
         $I->amOnPage(MainPage::$URL);
         $I->waitForElementVisible(MainPage::$newReservation,30);
+        if (isset($reservation['Description'])) //dù có hay ko có gt vẫn chạy
+        {
+            $I->fillField(ValuePage::$Description, $reservation['Description']);
+        }
+        if (isset($reservation['startTime'])) //dù có hay ko có gt vẫn chạy
+        {
+           $I->fillField(ValuePage::$Description, $reservation['startTime']);
+        }
         $I->click(MainPage::$newReservation);
     }
 

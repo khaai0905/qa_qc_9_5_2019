@@ -1,24 +1,31 @@
 <?php
-
-use Page\Acceptance\MainPage;
 use Step\Acceptance\FirstStep;
 use Step\Acceptance\ThirdStep;
+
+/**
+ * @property array reservation
+ */
 class FirstCest
 {
-
     protected $tableID;
     protected $numberOfPerson;
     protected $Date;
     protected $Description;
     protected $startTime;
 
+    /**
+     * FirstCest constructor.
+     */
     public function __construct()
     {
-        $this->tableID='1';
-        $this->numberOfPerson='5';
-        $this->Date='9/05/2019';
-        $this->Description='test';
-        $this->startTime='18';
+        $this->reservation =
+            [
+                'tableID' => "1",
+                'numberOfPerson' => '2',
+                'Date'=>'15/5/2019',
+                'Description' => "testing",
+                'startTime' => '5'
+            ];
     }
 
     /**
@@ -31,11 +38,10 @@ class FirstCest
     {
         $I->wantToTest('I want to do create new table successfully');
         $I->CreateNewReservation();
-        $I=new ThirdStep($scenario);
-        $I->InputForCreate($this->tableID,$this->numberOfPerson,$this->Date,$this->Description,$this->startTime);
+        $I = new ThirdStep($scenario);
+        $I->InputForCreate($this->reservation);
         $I->comment('Create Successfully');
-        $I->amOnPage(MainPage::$URL);
-        $I->pause();
+
     }
 
     /**
@@ -46,7 +52,6 @@ class FirstCest
     public function ReloadData(FirstStep $I)
     {
         $I->ReloadData();
-        $I->pause();
     }
 
     /**
@@ -57,7 +62,6 @@ class FirstCest
     public function DeleteData(FirstStep $I)
     {
         $I->DeleteData();
-        $I->pause();
     }
 
     /**
@@ -68,7 +72,6 @@ class FirstCest
     public function NextPage(FirstStep $I)
     {
         $I->NextPage();
-        $I->pause();
     }
 
     /**
@@ -82,8 +85,21 @@ class FirstCest
         $I->wantToTest('I want to test if i clear input field');
         $I->CreateNewReservation();
         $I=new ThirdStep($scenario);
-        $I->InputForClear($this->tableID,$this->numberOfPerson,$this->Date,$this->Description,$this->startTime);
-        $I->pause();
+        $I->InputForClear($this->reservation);
+    }
+
+    /**
+     * Verify edit data
+     * @param FirstStep $I
+     * @param $scenario
+     * @throws Exception
+     */
+    public function EditData(FirstStep $I, $scenario)
+    {
+        $I->wantToTest('I want to do edit table successfully');
+        $I->Edit();
+        $I=new ThirdStep($scenario);
+        $I->InputForCreate($this->reservation);
     }
 
 }

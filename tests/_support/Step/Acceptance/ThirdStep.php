@@ -5,139 +5,89 @@ use Page\Acceptance\ValuePage;
 class ThirdStep extends \AcceptanceTester
 {
     /**
-     * @param $tableID
-     * @param $numberOfPerson
-     * @param $Date
-     * @param $Description
-     * @param $startTime
-     * @throws \Exception
+     * @param array $reservation
      */
-    public function InputForCreate($tableID,$numberOfPerson,$Date,$Description,$startTime)
+    public function InputForCreate($reservation = array())
+        {
+            $I=$this;
+
+            $I -> fillField(ValuePage::$tableID, $reservation['tableID']);
+            $I -> fillField(ValuePage::$numberOfPerson, $reservation['numberOfPerson']);
+            $I -> fillField(ValuePage::$Date, $reservation['Date']);
+            $I -> fillField(ValuePage::$Description, $reservation['Description']);
+            $I -> fillField(ValuePage::$startTime, $reservation['startTime']);
+            $I->click(MainPage::$addButton);
+            $I->amOnPage(MainPage::$URL);
+        }
+
+    /**
+     * @param array $reservation
+     */
+    public function InputWithoutStartTime($reservation = array())
     {
         $I=$this;
-        $I->waitForElementVisible(ValuePage::$tableID,30);
-        $I->fillField(ValuePage::$tableID,$tableID);
-        $I->waitForElementVisible(ValuePage::$numberOfPerson,30);
-        $I->fillField(ValuePage::$numberOfPerson,$numberOfPerson);
-        $I->waitForElementVisible(ValuePage::$Date,30);
-        $I->fillField(ValuePage::$Date,$Date);
-        $I->waitForElementVisible(ValuePage::$Description,30);
-        $I->fillField(ValuePage::$Description,$Description);
-        $I->waitForElementVisible(ValuePage::$startTime,30);
-        $I->fillField(ValuePage::$startTime,$startTime);
+        $I -> fillField(ValuePage::$tableID, $reservation['tableID']);
+        $I -> fillField(ValuePage::$numberOfPerson, $reservation['numberOfPerson']);
+        $I -> fillField(ValuePage::$Date, $reservation['Date']);
+        $I -> fillField(ValuePage::$Description, $reservation['Description']);
         $I->click(MainPage::$addButton);
     }
 
     /**
-     * @param $tableID
-     * @param $numberOfPerson
-     * @param $Date
-     * @param $Description
-     * @throws \Exception
+     * @param array $reservation
      */
-    public function InputWithoutStartTime($tableID,$numberOfPerson,$Date,$Description)
+    public function InputWithoutNumberOfPerson($reservation = array())
     {
         $I=$this;
-        $I->waitForElementVisible(ValuePage::$tableID,30);
-        $I->fillField(ValuePage::$tableID,$tableID);
-        $I->waitForElementVisible(ValuePage::$numberOfPerson,30);
-        $I->fillField(ValuePage::$numberOfPerson,$numberOfPerson);
-        $I->waitForElementVisible(ValuePage::$Date,30);
-        $I->fillField(ValuePage::$Date,$Date);
-        $I->waitForElementVisible(ValuePage::$Description,30);
-        $I->fillField(ValuePage::$Description,$Description);
+
+        $I -> fillField(ValuePage::$tableID, $reservation['tableID']);
+        $I -> fillField(ValuePage::$Date, $reservation['Date']);
+        $I -> fillField(ValuePage::$Description, $reservation['Description']);
+        $I -> fillField(ValuePage::$startTime, $reservation['startTime']);
         $I->click(MainPage::$addButton);
     }
 
     /**
-     * @param $tableID
-     * @param $Date
-     * @param $Description
-     * @param $startTime
-     * @throws \Exception
+     * @param array $reservation
      */
-    public function InputWithoutNumberOfPerson($tableID,$Date,$Description,$startTime)
+    public function InputWithoutID($reservation = array())
     {
         $I=$this;
-        $I->waitForElementVisible(ValuePage::$tableID,30);
-        $I->fillField(ValuePage::$tableID,$tableID);
-        $I->waitForElementVisible(ValuePage::$Date,30);
-        $I->fillField(ValuePage::$Date,$Date);
-        $I->waitForElementVisible(ValuePage::$Description,30);
-        $I->fillField(ValuePage::$Description,$Description);
-        $I->waitForElementVisible(ValuePage::$startTime,30);
-        $I->fillField(ValuePage::$startTime,$startTime);
+
+        $I -> fillField(ValuePage::$numberOfPerson, $reservation['numberOfPerson']);
+        $I -> fillField(ValuePage::$Date, $reservation['Date']);
+        $I -> fillField(ValuePage::$Description, $reservation['Description']);
+        $I -> fillField(ValuePage::$startTime, $reservation['startTime']);
         $I->click(MainPage::$addButton);
     }
 
     /**
-     * @param $numberOfPerson
-     * @param $Date
-     * @param $Description
-     * @param $startTime
-     * @throws \Exception
+     * @param array $reservation
      */
-    public function InputWithoutID($numberOfPerson,$Date,$Description,$startTime)
+    public function InputWithoutDescription($reservation = array())
     {
         $I=$this;
-        $I->waitForElementVisible(ValuePage::$numberOfPerson,30);
-        $I->fillField(ValuePage::$numberOfPerson,$numberOfPerson);
-        $I->waitForElementVisible(ValuePage::$Date,30);
-        $I->fillField(ValuePage::$Date,$Date);
-        $I->waitForElementVisible(ValuePage::$Description,30);
-        $I->fillField(ValuePage::$Description,$Description);
-        $I->waitForElementVisible(ValuePage::$startTime,30);
-        $I->fillField(ValuePage::$startTime,$startTime);
+
+        $I -> fillField(ValuePage::$tableID, $reservation['tableID']);
+        $I -> fillField(ValuePage::$numberOfPerson, $reservation['numberOfPerson']);
+        $I -> fillField(ValuePage::$Date, $reservation['Date']);
+        $I -> fillField(ValuePage::$startTime, $reservation['startTime']);
         $I->click(MainPage::$addButton);
+        $I->amOnPage(MainPage::$URL);
     }
 
     /**
-     * @param $tableID
-     * @param $numberOfPerson
-     * @param $Date
-     * @param $startTime
-     * @throws \Exception
+     * @param array $reservation
      */
-    public function InputWithoutDescription($tableID,$numberOfPerson,$Date,$startTime)
+    public function InputForClear($reservation = array())
     {
         $I=$this;
-        $I->waitForElementVisible(ValuePage::$tableID,30);
-        $I->fillField(ValuePage::$tableID,$tableID);
-        $I->waitForElementVisible(ValuePage::$numberOfPerson,30);
-        $I->fillField(ValuePage::$numberOfPerson,$numberOfPerson);
-        $I->waitForElementVisible(ValuePage::$Date,30);
-        $I->fillField(ValuePage::$Date,$Date);
-        $I->waitForElementVisible(ValuePage::$startTime,30);
-        $I->fillField(ValuePage::$startTime,$startTime);
-        $I->click(MainPage::$addButton);
-    }
 
-    /**
-     * @param $tableID
-     * @param $numberOfPerson
-     * @param $Date
-     * @param $Description
-     * @param $startTime
-     * @throws \Exception
-     */
-    public function InputForClear($tableID, $numberOfPerson, $Date, $Description, $startTime)
-    {
-        $I=$this;
-        $I->waitForElementVisible(ValuePage::$tableID,30);
-        $I->clearField(ValuePage::$tableID);
-        $I->fillField(ValuePage::$tableID,$tableID);
-        $I->waitForElementVisible(ValuePage::$numberOfPerson,30);
-        $I->clearField(ValuePage::$numberOfPerson);
-        $I->fillField(ValuePage::$numberOfPerson,$numberOfPerson);
-        $I->waitForElementVisible(ValuePage::$Date,30);
-        $I->clearField(ValuePage::$Date);
-        $I->fillField(ValuePage::$Date,$Date);
-        $I->waitForElementVisible(ValuePage::$Description,30);
-        $I->clearField(ValuePage::$Description);;
-        $I->fillField(ValuePage::$Description,$Description);
-        $I->waitForElementVisible(ValuePage::$startTime,30);
-        $I->clearField(ValuePage::$startTime);
-        $I->fillField(ValuePage::$startTime,$startTime);
+        $I -> fillField(ValuePage::$tableID, $reservation['tableID']);
+        $I -> fillField(ValuePage::$numberOfPerson, $reservation['numberOfPerson']);
+        $I -> fillField(ValuePage::$Date, $reservation['Date']);
+        $I -> fillField(ValuePage::$Description, $reservation['Description']);
+        $I -> fillField(ValuePage::$startTime, $reservation['startTime']);
         $I->click(MainPage::$clearButton);
     }
 }

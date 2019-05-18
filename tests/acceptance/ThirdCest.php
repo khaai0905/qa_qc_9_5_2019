@@ -1,23 +1,31 @@
 <?php
-
 use Step\Acceptance\FirstStep;
 use Step\Acceptance\ThirdStep;
+
+/**
+ * @property array reservation
+ */
 class ThirdCest
 {
-
     protected $tableID;
     protected $numberOfPerson;
     protected $Date;
     protected $Description;
     protected $startTime;
 
+    /**
+     * ThirdCest constructor.
+     */
     public function __construct()
     {
-        $this->tableID='10';
-        $this->numberOfPerson='2';
-        $this->Date='10/9/2019';
-        $this->Description='happy';
-        $this->startTime='22';
+        $this->reservation =
+            [
+                'tableID' => "11",
+                'numberOfPerson' => '2',
+                'Date'=>'15/5/2019',
+                'Description' => "testing1",
+                'startTime' => '5'
+            ];
     }
 
     /**
@@ -31,8 +39,7 @@ class ThirdCest
         $I->wantToTest('I want to do create table unsuccessfully');
         $I->CreateNewReservation();
         $I=new ThirdStep($scenario);
-        $I->InputForCreate($this->tableID,$this->numberOfPerson,$this->Date,$this->Description,$this->startTime);
-        $I->pause();
+        $I->InputForCreate($this->reservation);
     }
 
 }

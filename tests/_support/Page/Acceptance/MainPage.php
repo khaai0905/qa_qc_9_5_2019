@@ -30,7 +30,7 @@ class MainPage
     public static $newReservation='//a[text()=\'New Reservation\']';
     public static $goToPage='(//a[@title=\'Go to page 2\'])';
     public static $Delete='(//a[text()=\'Delete\'])[2]';
-    public static $Edit='((//td[@class="edit"])/a)[1]';
+    public static $Edit='((//td[@class="edit"])/a)[4]';
     public static $reloadData='/html/body/p[2]/a';
     public static $addButton='//input[@class=\'t-beaneditor-submit\']';
     public static $clearButton='//a[text()=\'clear\']';

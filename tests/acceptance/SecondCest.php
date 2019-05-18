@@ -1,42 +1,8 @@
 <?php
-use Page\Acceptance\MainPage;
-use Step\Acceptance\FirstStep;
 use Step\Acceptance\SecondStep;
-use Step\Acceptance\ThirdStep;
 
 class SecondCest
 {
-
-    protected $tableID;
-    protected $numberOfPerson;
-    protected $Date;
-    protected $Description;
-    protected $startTime;
-
-    public function __construct()
-    {
-        $this->tableID='1';
-        $this->numberOfPerson='10';
-        $this->Date='10/9/2019';
-        $this->Description='happy';
-        $this->startTime='22';
-    }
-
-    /**
-     * Verify edit data
-     * @param FirstStep $I
-     * @param $scenario
-     * @throws Exception
-     */
-    public function EditData(FirstStep $I, $scenario)
-    {
-        $I->wantToTest('I want to do edit table successfully');
-        $I->Edit();
-        $I=new ThirdStep($scenario);
-        $I->InputForCreate($this->tableID,$this->numberOfPerson,$this->Date,$this->Description,$this->startTime);
-        $I->amOnPage(MainPage::$URL);
-        $I->pause();
-    }
 
     /**
      * Verify sort id

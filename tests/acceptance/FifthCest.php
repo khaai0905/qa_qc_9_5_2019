@@ -1,7 +1,11 @@
 <?php
-
+use Page\Acceptance\MainPage;
 use Step\Acceptance\FirstStep;
 use Step\Acceptance\ThirdStep;
+
+/**
+ * @property array reservation
+ */
 class FifthCest
 {
     protected $tableID;
@@ -11,14 +15,17 @@ class FifthCest
 
     public function __construct()
     {
-        $this->tableID='1';
-        $this->Date='10/9/2019';
-        $this->Description='happy';
-        $this->startTime='22';
+        $this->reservation =
+            [
+                'tableID' => "4",
+                'Date'=>'15/5/2019',
+                'Description' => "testing",
+                'startTime' => '5'
+            ];
     }
 
     /**
-     * Verify create new table with not input Number Of Person field
+     * Verify create new table without Number Of Person field
      * @param FirstStep $I
      * @param $scenario
      * @throws Exception
@@ -28,7 +35,6 @@ class FifthCest
         $I->wantToTest('I want to do create table unsuccessfully');
         $I->CreateNewReservation();
         $I=new ThirdStep($scenario);
-        $I->InputWithoutNumberOfPerson($this->tableID,$this->Date,$this->Description,$this->startTime);
-        $I->pause();
+        $I->InputWithoutNumberOfPerson($this->reservation);
     }
 }
